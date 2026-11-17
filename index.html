@@ -228,6 +228,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=date]):focus,textarea:foc
 #gate .gver{text-align:center;color:var(--muted);font-size:11px;margin-top:12px}
 #gate .hide{display:none}
 .huser{color:var(--brand);font-weight:700;margin-inline-start:12px;white-space:nowrap}
+#libTbl tr.sub td{background:#f3f5f9;font-weight:700;font-size:13px;color:#33415c;cursor:default}
+#libTbl tr.sub.c td{background:#e6ecf6;color:var(--brand)}
 </style>
 </head>
 <body>
@@ -250,12 +252,12 @@ input:not([type=checkbox]):not([type=radio]):not([type=date]):focus,textarea:foc
     <div class="glinks"><a id="gBack">חזרה לכניסה</a><span></span></div>
   </div>
   <div class="gerr" id="gErr"></div><div class="gmsg" id="gMsg"></div>
-  <div class="gver">גרסה V16 · עלתה לרשת 07/11/2026</div>
+  <div class="gver">גרסה V17 · עלתה לרשת 17/11/2026</div>
 </div></div>
 <header>
   <div class="hdrgrid">
     <img class="hlogo" src="data:image/png;base64,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" alt="טיקטין תכנון חשמל">
-    <div class="htitle"><h1>כתבי כמויות ואומדנים<span class="huser" id="hUser" hidden></span></h1><div class="app-version">גרסה V16 · עלתה לרשת 07/11/2026<span id="savedInfo"></span></div></div>
+    <div class="htitle"><h1>כתבי כמויות ואומדנים<span class="huser" id="hUser" hidden></span></h1><div class="app-version">גרסה V17 · עלתה לרשת 17/11/2026<span id="savedInfo"></span></div></div>
     <div class="hdr-btns">
       <div class="zoomctl" title="הגדלה והקטנה של התוכנה – בלי לשנות את זום הדפדפן">
         <button type="button" id="zOut" title="הקטנה">−</button><span id="zVal">100%</span><button type="button" id="zIn" title="הגדלה">+</button>
@@ -394,8 +396,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=date]):focus,textarea:foc
         <button id="libDel" title="מחיקת הסעיפים המסומנים מהמאגר">מחיקה</button>
         <button id="libXlsx" title="ייצוא המאגר לאקסל">ייצוא מאגר לאקסל</button>
         <span class="grow"></span>
-        <select id="libChap" style="width:200px"><option value="">כל הנושאים</option></select>
-        <div class="search"><input id="libSearch" placeholder="חיפוש – למשל: נקודת מאור 20 מ&quot;מ"></div>
+        <select id="libChap" style="width:170px" title="סינון לפי פרק"><option value="">כל הפרקים</option></select><select id="libSub" style="width:190px" title="סינון לפי תת פרק" disabled><option value="">כל תתי הפרקים</option></select>
+        <div class="search" style="min-width:150px;flex:1 1 200px"><input id="libSearch" placeholder="חיפוש – למשל: נקודת מאור 20 מ&quot;מ"></div>
       </div>
       <div class="scroll" style="flex:1"><table class="list" id="libTbl"><thead><tr><th style="width:30px"><input type="checkbox" id="libAll"></th><th>תאור הסעיף</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר אחרון</th><th style="width:90px">ממוצע</th><th style="width:90px">מינימום</th><th style="width:90px">מקסימום</th><th style="width:60px">מופעים</th><th style="width:16%">מקור אחרון</th></tr></thead><tbody></tbody></table>
         <div class="empty" id="libEmpty">המאגר ריק. לחצו "+ קליטה מקבצים" ובחרו כתבי כמויות קיימים (SKN, אקסל או PDF).</div></div>
@@ -1385,6 +1387,33 @@ $('#aRenum').onclick = () => { if (!needDoc()) return; if (!confirm('למספר 
 
 /* ========== מאגר ========== */
 const libKey = (desc, unit) => B.normDesc(desc).slice(0, 400) + '|' + (+unit || 0);
+/* מספור המאגר: פרק (בד"כ 08 חשמל) · סעיף בפורמט YY.XXXX – YY תת-פרק (מ-01), XXXX מספר סעיף (מ-10 בקפיצות של 10) */
+const p2 = n => String(+n || 0).padStart(2, '0'), p4 = n => String(+n || 0).padStart(4, '0');
+const libCode = e => e.ino ? p2(e.uno) + '.' + p4(e.ino) : '';
+const libOrd = (a, b) => (a.cno || 99) - (b.cno || 99) || (a.uno || 99) - (b.uno || 99) || (a.ino || 1e9) - (b.ino || 1e9);
+function libAssign(e, src) {
+  const cno = +src.c || +e.cno || 8, nm = B.normDesc(src.sub || e.sub || '');
+  const inChap = S.lib.filter(x => x !== e && +x.cno === cno && x.ino);
+  let uno = 0;
+  if (nm) { const m = inChap.find(x => x.sub && B.normDesc(x.sub) === nm); if (m) uno = +m.uno; }
+  if (!uno) { const want = +src.u || 0; const other = new Set(inChap.filter(x => B.normDesc(x.sub || '') !== nm).map(x => +x.uno));
+    if (want && !other.has(want)) uno = want; else { const all = new Set(inChap.map(x => +x.uno)); uno = 1; while (all.has(uno)) uno++; } }
+  const used = new Set(inChap.filter(x => +x.uno === uno).map(x => +x.ino));
+  let ino = +src.i || 0;
+  if (!ino || used.has(ino)) { const mx = Math.max(0, ...used); ino = Math.floor(mx / 10) * 10 + 10; }
+  e.cno = cno; e.uno = uno; e.ino = ino; if (src.sub && !e.sub) e.sub = src.sub; if (src.chap && !e.chap) e.chap = src.chap;
+}
+/* השלמת מספור לסעיפים שנקלטו לפני שהיה מספור – לפי המספרים בכתב שממנו הגיעו */
+async function libMigrate() {
+  const todo = new Map(S.lib.filter(e => !e.ino).map(e => [e.key, e])); if (!todo.size) return;
+  const changed = [];
+  for (const d of [...S.docs].sort((a, b) => (a.created || 0) - (b.created || 0))) {
+    for (const { r, C, U } of B.walk(d.rows)) { if (r.kind !== 'I') continue; const e = todo.get(libKey(r.desc, r.unit)); if (!e) continue;
+      libAssign(e, { c: r.c, u: r.u, i: r.i, sub: U && U.desc, chap: C && C.desc }); todo.delete(e.key); changed.push(e); }
+  }
+  for (const e of todo.values()) { libAssign(e, { sub: e.sub, chap: e.chap }); changed.push(e); }
+  await DB.putMany('lib', changed);
+}
 function libStats(e) { const ps = (e.prices || []).map(x => +x.p).filter(x => x > 0); if (!ps.length) return { last: 0, avg: 0, min: 0, max: 0, n: 0 };
   const last = e.prices[e.prices.length - 1]; return { last: +last.p, avg: B.round2(ps.reduce((a, b) => a + b, 0) / ps.length), min: Math.min(...ps), max: Math.max(...ps), n: ps.length, src: last.src, date: last.date }; }
 async function addToLib(doc, srcName) {
@@ -1394,6 +1423,7 @@ async function addToLib(doc, srcName) {
     if (r.kind !== 'I' || !(r.desc || '').trim()) continue;
     const key = libKey(r.desc, r.unit); let e = map.get(key);
     if (!e) { e = { id: B.uid(), key, desc: r.desc.trim(), unit: +r.unit || 1, chap: (C && C.desc) || '', sub: (U && U.desc) || '', prices: [] }; map.set(key, e); S.lib.push(e); added++; } else upd++;
+    if (!e.ino) libAssign(e, { c: r.c, u: r.u, i: r.i, sub: U && U.desc, chap: C && C.desc });
     if (+r.price > 0) e.prices.push({ p: +r.price, src: srcName || doc.name || '', date: Date.now() });
     if (e.prices.length > 40) e.prices = e.prices.slice(-40);
     changed.set(e.id, e);
@@ -1401,9 +1431,9 @@ async function addToLib(doc, srcName) {
   await DB.putMany('lib', [...changed.values()]);
   return { added, upd };
 }
-function libFiltered(q, chap) {
+function libFiltered(q, chap, sub) {
   const words = B.normDesc(q || '').split(' ').filter(Boolean);
-  return S.lib.filter(e => (!chap || e.chap === chap) && (!words.length || words.every(wd => (e._n || (e._n = B.normDesc(e.desc))).includes(wd))));
+  return S.lib.filter(e => (!chap || +e.cno === +chap) && (!sub || +e.uno === +sub) && (!words.length || words.every(wd => (e._n || (e._n = B.normDesc(e.desc))).includes(wd) || libCode(e).includes(wd) || (p2(e.cno) + '.' + libCode(e)).includes(wd)))).sort(libOrd);
 }
 /* ===== מחירונים מובנים (ממשלה) ===== */
 let PL = null, plLoading = null;
@@ -1459,21 +1489,37 @@ function insertPLItems(L, codes) {
   if (last) S.sel = last.id; B.walk(d.rows); renderBoq(); touch(); toast(`נוספו ${codes.length} סעיפים מ${L.short}`, 'ok');
 }
 function renderLib() {
-  $('#libTbl thead').innerHTML = `<tr><th style="width:30px"><input type="checkbox" id="libAll"></th><th>תאור הסעיף</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר אחרון</th><th style="width:90px">ממוצע</th><th style="width:90px">מינימום</th><th style="width:90px">מקסימום</th><th style="width:60px">מופעים</th><th style="width:16%">מקור אחרון</th></tr>`;
-  
+  $('#libTbl thead').innerHTML = `<tr><th style="width:30px"><input type="checkbox" id="libAll"></th><th style="width:76px">סעיף</th><th>תאור הסעיף</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר אחרון</th><th style="width:90px">ממוצע</th><th style="width:90px">מינימום</th><th style="width:90px">מקסימום</th><th style="width:60px">מופעים</th><th style="width:16%">מקור אחרון</th></tr>`;
   updCounts();
-  const chaps = [...new Set(S.lib.map(e => e.chap).filter(Boolean))].sort();
-  const cs = $('#libChap'); const cv = cs.value; cs.innerHTML = '<option value="">כל הנושאים</option>' + chaps.map(c => `<option ${c === cv ? 'selected' : ''}>${esc(c)}</option>`).join('');
-  const list = libFiltered($('#libSearch').value, cs.value).slice(0, 600);
+  // פרקים ותתי-פרקים לבחירה – לפי המספור
+  const chapName = {}, subName = {};
+  S.lib.forEach(e => { if (!e.cno) return; if (e.chap && !chapName[e.cno]) chapName[e.cno] = e.chap; const k = e.cno + '.' + e.uno; if (e.sub && !subName[k]) subName[k] = e.sub; });
+  const cs = $('#libChap'), us = $('#libSub'); const cv = cs.value;
+  const cnos = [...new Set(S.lib.map(e => +e.cno).filter(Boolean))].sort((a, b) => a - b);
+  cs.innerHTML = '<option value="">כל הפרקים</option>' + cnos.map(c => `<option value="${c}" ${String(c) === cv ? 'selected' : ''}>${p2(c)} – ${esc(chapName[c] || '')}</option>`).join('');
+  const uv = us.dataset.c === cs.value ? us.value : ''; us.dataset.c = cs.value;
+  const unos = cs.value ? [...new Set(S.lib.filter(e => +e.cno === +cs.value).map(e => +e.uno).filter(Boolean))].sort((a, b) => a - b) : [];
+  us.innerHTML = '<option value="">כל תתי הפרקים</option>' + unos.map(u => `<option value="${u}" ${String(u) === uv ? 'selected' : ''}>${p2(u)} – ${esc(subName[cs.value + '.' + u] || '')}</option>`).join('');
+  us.disabled = !cs.value;
+  const list = libFiltered($('#libSearch').value, cs.value, us.value).slice(0, 2000);
   $('#libEmpty').style.display = S.lib.length ? 'none' : 'block';
-  $('#libTbl tbody').innerHTML = list.map(e => { const st = libStats(e); return `<tr data-id="${e.id}" class="${S.libSel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" class="lsel" ${S.libSel.has(e.id) ? 'checked' : ''}></td><td>${esc(e.desc)}${e.chap ? `<div style="font-size:11px;color:var(--muted)">${esc(e.chap)}${e.sub ? ' · ' + esc(e.sub) : ''}</div>` : ''}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${st.last ? fmt(st.last) : ''}</td><td class="num">${st.avg ? fmt(st.avg) : ''}</td><td class="num">${st.min ? fmt(st.min) : ''}</td><td class="num">${st.max ? fmt(st.max) : ''}</td><td>${st.n}</td><td style="font-size:12px">${esc(st.src || '')}</td></tr>`; }).join('');
-  $$('#libTbl tbody tr').forEach(tr => tr.onclick = e => { const id = tr.dataset.id; if (S.libSel.has(id)) S.libSel.delete(id); else S.libSel.add(id); tr.classList.toggle('sel'); tr.querySelector('.lsel').checked = S.libSel.has(id); });
+  // תצוגה לפי פרקים ותתי-פרקים, כמו בכתב הכמויות
+  let html = '', lc = null, lu = null;
+  for (const e of list) {
+    if (e.cno !== lc) { lc = e.cno; lu = null; html += `<tr class="sub c"><td></td><td class="num">${p2(e.cno)}</td><td colspan="8">פרק ${p2(e.cno)} – ${esc(chapName[e.cno] || e.chap || '')}</td></tr>`; }
+    if (e.uno !== lu) { lu = e.uno; html += `<tr class="sub"><td></td><td class="num">${p2(e.cno)}.${p2(e.uno)}</td><td colspan="8">תת פרק ${p2(e.uno)} – ${esc(subName[e.cno + '.' + e.uno] || e.sub || '')}</td></tr>`; }
+    const st = libStats(e);
+    html += `<tr data-id="${e.id}" class="${S.libSel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" class="lsel" ${S.libSel.has(e.id) ? 'checked' : ''}></td><td class="num" dir="ltr">${libCode(e)}</td><td>${esc(e.desc)}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${st.last ? fmt(st.last) : ''}</td><td class="num">${st.avg ? fmt(st.avg) : ''}</td><td class="num">${st.min ? fmt(st.min) : ''}</td><td class="num">${st.max ? fmt(st.max) : ''}</td><td>${st.n}</td><td style="font-size:12px">${esc(st.src || '')}</td></tr>`;
+  }
+  $('#libTbl tbody').innerHTML = html;
+  $$('#libTbl tbody tr[data-id]').forEach(tr => tr.onclick = e => { const id = tr.dataset.id; if (S.libSel.has(id)) S.libSel.delete(id); else S.libSel.add(id); tr.classList.toggle('sel'); tr.querySelector('.lsel').checked = S.libSel.has(id); });
+  $('#libAll').onchange = ev => { list.forEach(e => ev.target.checked ? S.libSel.add(e.id) : S.libSel.delete(e.id)); renderLib(); };
 }
-$('#libSearch').oninput = renderLib; $('#libChap').onchange = renderLib;
+$('#libSearch').oninput = renderLib; $('#libChap').onchange = renderLib; $('#libSub').onchange = renderLib;
 $('#libFromDoc').onclick = async () => { if (!needDoc()) return; const r = await addToLib(S.doc, (S.doc.projectNo ? S.doc.projectNo + ' ' : '') + S.doc.name); renderLib(); toast(`נוספו ${r.added} סעיפים חדשים, עודכנו ${r.upd}`, 'ok'); };
-$('#libNew').onclick = async () => { const o = await form('סעיף חדש למאגר', [{ k: 'desc', label: 'תאור', span: 4 }, { k: 'unit', label: 'יחידה', type: 'select', opts: B.UNITS.map(u => u.he), v: "יח'" }, { k: 'price', label: 'מחיר', span: 2 }, { k: 'chap', label: 'נושא / פרק', span: 4 }]);
-  if (!o || !o.desc) return; const e = { id: B.uid(), key: libKey(o.desc, B.unitCode(o.unit)), desc: o.desc, unit: B.unitCode(o.unit), chap: o.chap, prices: B.num(o.price) ? [{ p: B.num(o.price), src: 'ידני', date: Date.now() }] : [] };
-  S.lib.push(e); await DB.put('lib', e); renderLib(); };
+$('#libNew').onclick = async () => { const o = await form('סעיף חדש למאגר', [{ k: 'desc', label: 'תאור', span: 4 }, { k: 'unit', label: 'יחידה', type: 'select', opts: B.UNITS.map(u => u.he), v: "יח'" }, { k: 'price', label: 'מחיר', span: 2 }, { k: 'cno', label: 'מספר פרק', v: $('#libChap').value ? p2($('#libChap').value) : '08' }, { k: 'sub', label: 'תת פרק (שם)', span: 3 }]);
+  if (!o || !o.desc) return; const e = { id: B.uid(), key: libKey(o.desc, B.unitCode(o.unit)), desc: o.desc, unit: B.unitCode(o.unit), chap: (S.lib.find(x => +x.cno === (+o.cno || 8)) || {}).chap || '', sub: o.sub, prices: B.num(o.price) ? [{ p: B.num(o.price), src: 'ידני', date: Date.now() }] : [] };
+  libAssign(e, { c: +o.cno || 8, sub: o.sub }); S.lib.push(e); await DB.put('lib', e); renderLib(); toast('נוסף סעיף ' + p2(e.cno) + '.' + libCode(e), 'ok'); };
 $('#libDel').onclick = async () => { if (!S.libSel.size) return toast('סמנו סעיפים במאגר'); if (!confirm(`למחוק ${S.libSel.size} סעיפים מהמאגר?`)) return;
   for (const id of S.libSel) await DB.del('lib', id); S.lib = S.lib.filter(e => !S.libSel.has(e.id)); S.libSel.clear(); renderLib(); };
 $('#libToDoc').onclick = async () => { if (!needDoc()) return;
@@ -1494,9 +1540,9 @@ $('#aLib').onclick = async () => { if (!needDoc()) return;
   const draw = async () => {
     if (src() === 'tiktin') {
       $('#plChap').hidden = true;
-      $('#plTbl thead').innerHTML = '<tr><th style="width:30px"></th><th>תאור</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר אחרון</th><th style="width:90px">ממוצע</th></tr>';
+      $('#plTbl thead').innerHTML = '<tr><th style="width:30px"></th><th style="width:96px">סעיף</th><th>תאור</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר אחרון</th><th style="width:90px">ממוצע</th></tr>';
       const list = libFiltered($('#plSearch').value).slice(0, 300);
-      $('#plTbl tbody').innerHTML = list.map(e => { const st = libStats(e); return `<tr data-id="${e.id}" class="${sel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" ${sel.has(e.id) ? 'checked' : ''}></td><td>${esc(e.desc)}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${st.last ? fmt(st.last) : ''}</td><td class="num">${st.avg ? fmt(st.avg) : ''}</td></tr>`; }).join('') || '<tr><td colspan="5" class="empty">מאגר טיקטין ריק – בחרו מחירון ממשלתי</td></tr>';
+      $('#plTbl tbody').innerHTML = list.map(e => { const st = libStats(e); return `<tr data-id="${e.id}" class="${sel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" ${sel.has(e.id) ? 'checked' : ''}></td><td class="num" dir="ltr">${e.ino ? p2(e.cno) + '.' + libCode(e) : ''}</td><td>${esc(e.desc)}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${st.last ? fmt(st.last) : ''}</td><td class="num">${st.avg ? fmt(st.avg) : ''}</td></tr>`; }).join('') || '<tr><td colspan="5" class="empty">מאגר טיקטין ריק – בחרו מחירון ממשלתי</td></tr>';
     } else {
       const L = (await loadPL())[src()]; const pc = $('#plChap'); pc.hidden = false; if (pc.dataset.src !== src()) { pc.innerHTML = plChapOpts(L, ''); pc.dataset.src = src(); }
       $('#plTbl thead').innerHTML = '<tr><th style="width:30px"></th><th style="width:105px">סעיף</th><th>תאור</th><th style="width:70px">יחידה</th><th style="width:96px">מחיר</th></tr>';
@@ -1517,9 +1563,12 @@ $('#fileMulti').onchange = async e => { const files = [...e.target.files]; let A
   for (const f of files) { try { const d = await readFileToDoc(f); const r = await addToLib(d, f.name.replace(/\.[^.]+$/, '')); A += r.added; U += r.upd; } catch (err) { bad.push(f.name); } }
   renderLib(); toast(`נקלטו ${files.length - bad.length} קבצים: ${A} סעיפים חדשים, ${U} עדכוני מחיר${bad.length ? ' · לא נקלטו: ' + bad.join(', ') : ''}`, bad.length ? 'bad' : 'ok'); };
 $('#libXlsx').onclick = async () => {
-  const aoa = [['תאור', 'יחידה', 'מחיר אחרון', 'ממוצע', 'מינימום', 'מקסימום', 'מופעים', 'נושא', 'מקור אחרון']];
-  S.lib.forEach(e => { const st = libStats(e); aoa.push([e.desc, B.unitHe(e.unit), st.last, st.avg, st.min, st.max, st.n, e.chap || '', st.src || '']); });
-  const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [{ wch: 80 }, { wch: 8 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 8 }, { wch: 30 }, { wch: 30 }];
+  const aoa = [['פרק', 'סעיף', 'תאור', 'יחידה', 'מחיר אחרון', 'ממוצע', 'מינימום', 'מקסימום', 'מופעים', 'מקור אחרון']]; let lc = null, lu = null;
+  [...S.lib].sort(libOrd).forEach(e => { const st = libStats(e);
+    if (e.cno !== lc) { lc = e.cno; lu = null; aoa.push([p2(e.cno), '', 'פרק ' + p2(e.cno) + ' – ' + (e.chap || '')]); }
+    if (e.uno !== lu) { lu = e.uno; aoa.push([p2(e.cno), p2(e.uno) + '.0000', 'תת פרק ' + p2(e.uno) + ' – ' + (e.sub || '')]); }
+    aoa.push([p2(e.cno), libCode(e), e.desc, B.unitHe(e.unit), st.last, st.avg, st.min, st.max, st.n, st.src || '']); });
+  const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [{ wch: 6 }, { wch: 10 }, { wch: 80 }, { wch: 8 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 12 }, { wch: 8 }, { wch: 30 }];
   const wb = XLSX.utils.book_new(); wb.Workbook = { Views: [{ RTL: true }] }; XLSX.utils.book_append_sheet(wb, ws, 'מאגר סעיפים'); XLSX.writeFile(wb, 'מאגר סעיפים טיקטין.xlsx'); };
 
 /* ========== ייבוא קבצים ========== */
@@ -1856,7 +1905,7 @@ async function openFromLink() {
 (async function init() {
   try { await DB.open(); } catch (e) { toast('אחסון בדפדפן אינו זמין – הנתונים לא יישמרו', 'bad'); }
   await gate();
-  if (DB.db) { [S.projects, S.docs, S.lib] = await Promise.all([DB.all('projects'), DB.all('docs'), DB.all('lib')]); }
+  if (DB.db) { [S.projects, S.docs, S.lib] = await Promise.all([DB.all('projects'), DB.all('docs'), DB.all('lib')]); await libMigrate(); }
   let last = null; try { last = localStorage.getItem('tkq-last'); } catch (e) { }
   if (last && S.docs.some(d => d.id === last)) { const d = S.docs.find(x => x.id === last); S.projSel = d.projectId; S.doc = d; d.bids = d.bids || []; B.walk(d.rows); fillMeta(); }
   else if (S.projects.length) S.projSel = S.projects[0].id;
