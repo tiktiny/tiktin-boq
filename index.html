@@ -233,8 +233,10 @@ input:not([type=checkbox]):not([type=radio]):not([type=date]):focus,textarea:foc
 /* קווים עדינים בין הטורים + ידית לשינוי רוחב */
 .list th+th,.list td+td,.boq th+th,.boq td+td{border-inline-start:1px solid #e3e7ee}
 .list th,.boq th{position:sticky}
-.colrz{position:absolute;top:0;bottom:0;left:-4px;width:8px;cursor:col-resize;z-index:4;touch-action:none}
-.colrz:hover,.colrz.on{background:linear-gradient(to right,transparent 3px,var(--accent) 3px,var(--accent) 5px,transparent 5px)}
+.colrz{position:absolute;top:0;bottom:0;left:0;width:10px;cursor:col-resize;z-index:4;touch-action:none}
+.colrz::after{content:"";position:absolute;top:4px;bottom:4px;left:0;width:2px;border-radius:1px;background:transparent}
+th:hover>.colrz::after{background:#c9d2e0}
+.colrz:hover::after,.colrz.on::after{background:var(--accent);top:0;bottom:0}
 body.colresizing,body.colresizing *{cursor:col-resize!important;user-select:none}
 </style>
 </head>
@@ -258,12 +260,12 @@ body.colresizing,body.colresizing *{cursor:col-resize!important;user-select:none
     <div class="glinks"><a id="gBack">חזרה לכניסה</a><span></span></div>
   </div>
   <div class="gerr" id="gErr"></div><div class="gmsg" id="gMsg"></div>
-  <div class="gver">גרסה V19 · עלתה לרשת 17/11/2026</div>
+  <div class="gver">גרסה V21 · עלתה לרשת 17/11/2026</div>
 </div></div>
 <header>
   <div class="hdrgrid">
     <img class="hlogo" src="data:image/png;base64,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" alt="טיקטין תכנון חשמל">
-    <div class="htitle"><h1>כתבי כמויות ואומדנים<span class="huser" id="hUser" hidden></span></h1><div class="app-version">גרסה V19 · עלתה לרשת 17/11/2026<span id="savedInfo"></span></div></div>
+    <div class="htitle"><h1>כתבי כמויות ואומדנים<span class="huser" id="hUser" hidden></span></h1><div class="app-version">גרסה V21 · עלתה לרשת 17/11/2026<span id="savedInfo"></span></div></div>
     <div class="hdr-btns">
       <div class="zoomctl" title="הגדלה והקטנה של התוכנה – בלי לשנות את זום הדפדפן">
         <button type="button" id="zOut" title="הקטנה">−</button><span id="zVal">100%</span><button type="button" id="zIn" title="הגדלה">+</button>
@@ -358,6 +360,7 @@ body.colresizing,body.colresizing *{cursor:col-resize!important;user-select:none
         <button id="aUndo" class="sm" title="ביטול הפעולה האחרונה (Ctrl+Z)">↶ ביטול</button>
         <button id="aRenum" class="sm" title="מספור מחדש של כל הסעיפים בקפיצות של 10">מספור</button>
         <button id="aPriceLib" class="sm" title="השלמת מחירים חסרים מהמאגר – לאומדן">תמחור מהמאגר</button>
+        <button id="aBenarit" class="sm" title="בדיקת מחיר הסעיף המסומן במאגר מחירי האמת של בנארית – ממוצע המכרזים מ-6 החודשים האחרונים – ועדכון המחיר בכתב">מחיר מבנארית</button>
         <div class="search tsearch"><input id="boqSearch" placeholder="חיפוש בתאור"></div>
       </div>
       <div class="scroll boqwrap" id="boqScroll">
@@ -522,6 +525,14 @@ body.colresizing,body.colresizing *{cursor:col-resize!important;user-select:none
 <input type="file" id="fileDocs" hidden multiple>
 <input type="file" id="fileMulti" hidden multiple accept=".skn,.SKN,.xlsx,.xls,.csv,.pdf,.tkq,.json">
 <button id="clearX" type="button" title="ניקוי השדה" tabindex="-1">×</button>
+<!-- מחיר מבנארית -->
+<div class="ov" id="ovBen"><div class="box" style="max-width:980px">
+  <h2>מחיר מבנארית: <span id="bnItem" style="color:var(--brand);font-weight:600"></span></h2>
+  <div class="bar" style="margin-bottom:8px"><div class="search" style="flex:1 1 300px"><input id="bnQ" placeholder="מילות חיפוש – כל המילים חייבות להופיע בתאור הסעיף"></div><button class="primary" id="bnGo">חיפוש בבנארית</button></div>
+  <div id="bnMsg" class="hint" style="font-size:13px"></div>
+  <div class="scroll" style="max-height:48vh"><table class="list" id="bnTbl"><thead><tr><th style="width:30px"></th><th>תאור הסעיף בבנארית</th><th style="width:70px">יחידה</th><th style="width:80px">כמות</th><th style="width:100px">מחיר יחידה</th><th style="width:84px">מכרז</th><th style="width:20%">פרויקט</th></tr></thead><tbody></tbody></table></div>
+  <div class="acts"><button class="primary" id="bnOk" disabled>עדכון המחיר בכתב</button><button id="bnOpen">פתיחת החיפוש באתר בנארית ↗</button><button id="bnClose">סגירה</button></div>
+</div></div>
 <div class="toast" id="toast"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -1413,6 +1424,11 @@ function libAssign(e, src) {
 async function libMigrate() {
   const changed = [];
   S.lib.forEach(e => { if (e.prices) { e.price = libPrice(e); e.src = libSrc(e); delete e.prices; if (e.ino) changed.push(e); } });
+  // כמות מהכתב שממנו הגיע הסעיף (לסעיפים שנקלטו לפני שנשמרה כמות)
+  const noQty = new Map(S.lib.filter(e => e.qty == null).map(e => [e.key, e]));
+  if (noQty.size) for (const d of [...S.docs].sort((a, b) => (b.updated || 0) - (a.updated || 0))) for (const r of d.rows) {
+    if (r.kind !== 'I') continue; const e = noQty.get(libKey(r.desc, r.unit)); if (!e) continue;
+    if (!e.src || !d.name || String(e.src).includes(d.name)) { e.qty = +r.qty || 0; noQty.delete(e.key); if (e.ino) changed.push(e); } }
   const todo = new Map(S.lib.filter(e => !e.ino).map(e => [e.key, e]));
   for (const d of [...S.docs].sort((a, b) => (a.created || 0) - (b.created || 0))) {
     for (const { r, C, U } of B.walk(d.rows)) { if (r.kind !== 'I') continue; const e = todo.get(libKey(r.desc, r.unit)); if (!e) continue;
@@ -1432,7 +1448,7 @@ async function addToLib(doc, srcName) {
     const key = libKey(r.desc, r.unit); let e = map.get(key);
     if (!e) { e = { id: B.uid(), key, desc: r.desc.trim(), unit: +r.unit || 1, chap: (C && C.desc) || '', sub: (U && U.desc) || '' }; map.set(key, e); S.lib.push(e); added++; } else upd++;
     if (!e.ino) libAssign(e, { c: r.c, u: r.u, i: r.i, sub: U && U.desc, chap: C && C.desc });
-    if (+r.price > 0) { e.price = +r.price; e.src = srcName || doc.name || ''; e.date = Date.now(); }
+    if (+r.price > 0 || +r.qty > 0) { if (+r.price > 0) e.price = +r.price; e.qty = +r.qty || 0; e.src = srcName || doc.name || ''; e.date = Date.now(); }
     delete e.prices;
     changed.set(e.id, e);
   }
@@ -1497,7 +1513,7 @@ function insertPLItems(L, codes) {
   if (last) S.sel = last.id; B.walk(d.rows); renderBoq(); touch(); toast(`נוספו ${codes.length} סעיפים מ${L.short}`, 'ok');
 }
 function renderLib() {
-  $('#libTbl thead').innerHTML = `<tr><th style="width:30px"><input type="checkbox" id="libAll"></th><th style="width:76px">סעיף</th><th>תאור הסעיף</th><th style="width:70px">יחידה</th><th style="width:110px">מחיר</th><th style="width:22%">מקור</th></tr>`;
+  $('#libTbl thead').innerHTML = `<tr><th style="width:30px"><input type="checkbox" id="libAll"></th><th style="width:76px">סעיף</th><th>תאור הסעיף</th><th style="width:70px">יחידה</th><th style="width:90px">כמות</th><th style="width:110px">מחיר</th><th style="width:22%">מקור</th></tr>`;
   updCounts();
   // פרקים ותתי-פרקים לבחירה – לפי המספור
   const chapName = {}, subName = {};
@@ -1514,10 +1530,10 @@ function renderLib() {
   // תצוגה לפי פרקים ותתי-פרקים, כמו בכתב הכמויות
   let html = '', lc = null, lu = null;
   for (const e of list) {
-    if (e.cno !== lc) { lc = e.cno; lu = null; html += `<tr class="sub c"><td></td><td class="num">${p2(e.cno)}</td><td colspan="4">פרק ${p2(e.cno)} – ${esc(chapName[e.cno] || e.chap || '')}</td></tr>`; }
-    if (e.uno !== lu) { lu = e.uno; html += `<tr class="sub"><td></td><td class="num">${p2(e.cno)}.${p2(e.uno)}</td><td colspan="4">תת פרק ${p2(e.uno)} – ${esc(subName[e.cno + '.' + e.uno] || e.sub || '')}</td></tr>`; }
+    if (e.cno !== lc) { lc = e.cno; lu = null; html += `<tr class="sub c"><td></td><td class="num">${p2(e.cno)}</td><td colspan="5">פרק ${p2(e.cno)} – ${esc(chapName[e.cno] || e.chap || '')}</td></tr>`; }
+    if (e.uno !== lu) { lu = e.uno; html += `<tr class="sub"><td></td><td class="num">${p2(e.cno)}.${p2(e.uno)}</td><td colspan="5">תת פרק ${p2(e.uno)} – ${esc(subName[e.cno + '.' + e.uno] || e.sub || '')}</td></tr>`; }
     const pr = libPrice(e);
-    html += `<tr data-id="${e.id}" class="${S.libSel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" class="lsel" ${S.libSel.has(e.id) ? 'checked' : ''}></td><td class="num" dir="ltr">${libCode(e)}</td><td>${esc(e.desc)}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${pr ? fmt(pr) : ''}</td><td style="font-size:12px">${esc(libSrc(e))}</td></tr>`;
+    html += `<tr data-id="${e.id}" class="${S.libSel.has(e.id) ? 'sel' : ''}"><td><input type="checkbox" class="lsel" ${S.libSel.has(e.id) ? 'checked' : ''}></td><td class="num" dir="ltr">${libCode(e)}</td><td>${esc(e.desc)}</td><td>${esc(B.unitHe(e.unit))}</td><td class="num">${+e.qty ? fmtQ(e.qty) : ''}</td><td class="num">${pr ? fmt(pr) : ''}</td><td style="font-size:12px">${esc(libSrc(e))}</td></tr>`;
   }
   $('#libTbl tbody').innerHTML = html;
   $$('#libTbl tbody tr[data-id]').forEach(tr => tr.onclick = e => { const id = tr.dataset.id; if (S.libSel.has(id)) S.libSel.delete(id); else S.libSel.add(id); tr.classList.toggle('sel'); tr.querySelector('.lsel').checked = S.libSel.has(id); });
@@ -1525,8 +1541,8 @@ function renderLib() {
 }
 $('#libSearch').oninput = renderLib; $('#libChap').onchange = renderLib; $('#libSub').onchange = renderLib;
 $('#libFromDoc').onclick = async () => { if (!needDoc()) return; const r = await addToLib(S.doc, (S.doc.projectNo ? S.doc.projectNo + ' ' : '') + S.doc.name); renderLib(); toast(`נוספו ${r.added} סעיפים חדשים, עודכנו ${r.upd}`, 'ok'); };
-$('#libNew').onclick = async () => { const o = await form('סעיף חדש למאגר', [{ k: 'desc', label: 'תאור', span: 4 }, { k: 'unit', label: 'יחידה', type: 'select', opts: B.UNITS.map(u => u.he), v: "יח'" }, { k: 'price', label: 'מחיר', span: 2 }, { k: 'cno', label: 'מספר פרק', v: $('#libChap').value ? p2($('#libChap').value) : '08' }, { k: 'sub', label: 'תת פרק (שם)', span: 3 }]);
-  if (!o || !o.desc) return; const e = { id: B.uid(), key: libKey(o.desc, B.unitCode(o.unit)), desc: o.desc, unit: B.unitCode(o.unit), chap: (S.lib.find(x => +x.cno === (+o.cno || 8)) || {}).chap || '', sub: o.sub, price: B.num(o.price), src: 'ידני', date: Date.now() };
+$('#libNew').onclick = async () => { const o = await form('סעיף חדש למאגר', [{ k: 'desc', label: 'תאור', span: 4 }, { k: 'unit', label: 'יחידה', type: 'select', opts: B.UNITS.map(u => u.he), v: "יח'" }, { k: 'qty', label: 'כמות' }, { k: 'price', label: 'מחיר' }, { k: 'cno', label: 'מספר פרק', v: $('#libChap').value ? p2($('#libChap').value) : '08' }, { k: 'sub', label: 'תת פרק (שם)', span: 3 }]);
+  if (!o || !o.desc) return; const e = { id: B.uid(), key: libKey(o.desc, B.unitCode(o.unit)), desc: o.desc, unit: B.unitCode(o.unit), chap: (S.lib.find(x => +x.cno === (+o.cno || 8)) || {}).chap || '', sub: o.sub, qty: B.num(o.qty), price: B.num(o.price), src: 'ידני', date: Date.now() };
   libAssign(e, { c: +o.cno || 8, sub: o.sub }); S.lib.push(e); await DB.put('lib', e); renderLib(); toast('נוסף סעיף ' + p2(e.cno) + '.' + libCode(e), 'ok'); };
 $('#libDel').onclick = async () => { if (!S.libSel.size) return toast('סמנו סעיפים במאגר'); if (!confirm(`למחוק ${S.libSel.size} סעיפים מהמאגר?`)) return;
   for (const id of S.libSel) await DB.del('lib', id); S.lib = S.lib.filter(e => !S.libSel.has(e.id)); S.libSel.clear(); renderLib(); };
@@ -1571,12 +1587,12 @@ $('#fileMulti').onchange = async e => { const files = [...e.target.files]; let A
   for (const f of files) { try { const d = await readFileToDoc(f); const r = await addToLib(d, f.name.replace(/\.[^.]+$/, '')); A += r.added; U += r.upd; } catch (err) { bad.push(f.name); } }
   renderLib(); toast(`נקלטו ${files.length - bad.length} קבצים: ${A} סעיפים חדשים, ${U} עדכוני מחיר${bad.length ? ' · לא נקלטו: ' + bad.join(', ') : ''}`, bad.length ? 'bad' : 'ok'); };
 $('#libXlsx').onclick = async () => {
-  const aoa = [['פרק', 'סעיף', 'תאור', 'יחידה', 'מחיר', 'מקור']]; let lc = null, lu = null;
+  const aoa = [['פרק', 'סעיף', 'תאור', 'יחידה', 'כמות', 'מחיר', 'מקור']]; let lc = null, lu = null;
   [...S.lib].sort(libOrd).forEach(e => {
     if (e.cno !== lc) { lc = e.cno; lu = null; aoa.push([p2(e.cno), '', 'פרק ' + p2(e.cno) + ' – ' + (e.chap || '')]); }
     if (e.uno !== lu) { lu = e.uno; aoa.push([p2(e.cno), p2(e.uno) + '.0000', 'תת פרק ' + p2(e.uno) + ' – ' + (e.sub || '')]); }
-    aoa.push([p2(e.cno), libCode(e), e.desc, B.unitHe(e.unit), libPrice(e), libSrc(e)]); });
-  const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [{ wch: 6 }, { wch: 10 }, { wch: 80 }, { wch: 8 }, { wch: 12 }, { wch: 30 }];
+    aoa.push([p2(e.cno), libCode(e), e.desc, B.unitHe(e.unit), +e.qty || '', libPrice(e), libSrc(e)]); });
+  const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = [{ wch: 6 }, { wch: 10 }, { wch: 80 }, { wch: 8 }, { wch: 10 }, { wch: 12 }, { wch: 30 }];
   const wb = XLSX.utils.book_new(); wb.Workbook = { Views: [{ RTL: true }] }; XLSX.utils.book_append_sheet(wb, ws, 'מאגר סעיפים'); XLSX.writeFile(wb, 'מאגר סעיפים טיקטין.xlsx'); };
 
 /* ========== ייבוא קבצים ========== */
@@ -1910,39 +1926,101 @@ async function openFromLink() {
 }
 
 
-/* ========== קווים בין הטורים ושינוי רוחב טורים (הרוחב נשמר במחשב) ========== */
+
+/* ========== מחיר מבנארית – דרך תוסף הכרום של טיקטין ==========
+   התוכנה שולחת לתוסף את מילות החיפוש; התוסף קורא את מאגר מחירי האמת של בנארית עם הכניסה של המשתמש ומחזיר את התוצאות */
+const BEN_URL = q => 'https://mme.benarit.com/info?includeTxt=' + encodeURIComponent(q).replace(/%20/g, '+');
+const BEN_STOP = new Set(['כולל', 'עם', 'של', 'את', 'או', 'על', 'לפי', 'כל', 'עד', 'וכו', 'הכל', 'ע"ג', 'מסוג', 'תוצרת', 'דוגמת', 'ש"ע', 'שו"ע', 'וכן', 'גם', 'בין', 'כמו']);
+function benQuery(desc) {
+  const words = String(desc || '').replace(/[,;:()\[\]{}!?•]/g, ' ').replace(/\.(?!\d)/g, ' ').split(/\s+/)
+    .map(w => w.replace(/^[-–'"]+|[-–]+$/g, '')).filter(w => w.length > 1 && !BEN_STOP.has(w));
+  return words.slice(0, 4).join(' ');
+}
+let benReq = 0; const benWait = {};
+window.addEventListener('message', ev => { const m = ev.data; if (ev.source !== window || !m || m.tk !== 'benarit-res' || !benWait[m.id]) return; benWait[m.id](m); delete benWait[m.id]; });
+const benExt = () => document.documentElement.dataset.tkBenarit || '';
+function benAsk(q) { return new Promise(res => { const id = ++benReq; benWait[id] = res; window.postMessage({ tk: 'benarit', op: 'search', id, q, months: 6 }, location.origin);
+  setTimeout(() => { if (benWait[id]) { delete benWait[id]; res({ ok: false, error: 'timeout' }); } }, 45000); }); }
+let benState = null;
+function benRender() {
+  const st = benState; const tb = $('#bnTbl tbody'); if (!st) return;
+  const items = st.items || [];
+  tb.innerHTML = items.map((x, i) => `<tr data-i="${i}" class="${x.on ? 'sel' : ''}"><td><input type="checkbox" ${x.on ? 'checked' : ''}></td><td>${esc(x.desc)}</td><td>${esc(x.unit || '')}</td><td class="num">${x.qty ? fmtQ(x.qty) : ''}</td><td class="num">${x.price ? fmt(x.price) : ''}</td><td>${x.date ? esc(x.date) : ''}${x.old ? ' <span style="color:var(--muted)">(ישן)</span>' : ''}</td><td style="font-size:12px;color:var(--muted)">${esc([x.proj, x.region].filter(Boolean).join(' · '))}${x.bids ? ` · ${x.bids} הצעות` : ''}</td></tr>`).join('')
+    || `<tr><td colspan="7" class="empty">${st.busy ? 'מחפש בבנארית…' : 'לא נמצאו סעיפים – נסו פחות מילים או ניסוח אחר'}</td></tr>`;
+  $$('#bnTbl tbody tr[data-i]').forEach(tr => tr.onclick = () => { const x = items[+tr.dataset.i]; x.on = !x.on; benRender(); });
+  const on = items.filter(x => x.on && x.price > 0); const ps = on.map(x => x.price);
+  st.avg = ps.length ? B.round2(ps.reduce((a, b) => a + b, 0) / ps.length) : 0;
+  $('#bnOk').disabled = !st.avg;
+  $('#bnOk').textContent = st.avg ? `עדכון המחיר בכתב: ${fmt(st.avg)} ₪` : 'עדכון המחיר בכתב';
+  if (!st.busy && items.length) $('#bnMsg').innerHTML = `נמצאו ${st.total || items.length} סעיפים${st.query && st.query !== $('#bnQ').value.trim() ? ` (חיפוש: <b>${esc(st.query)}</b>)` : ''}. ` +
+    (ps.length ? `ממוצע <b>${fmt(st.avg)} ₪</b> מתוך ${ps.length} מכרזים (טווח ${fmt(Math.min(...ps))}–${fmt(Math.max(...ps))} ₪). ` : 'סמנו סעיפים לחישוב הממוצע. ') +
+    `מסומנים אוטומטית: אותה יחידה ומכרזים מ-6 החודשים האחרונים. המחיר הוא ממוצע הצעות הקבלנים במכרז, מעודכן למדד.${st.updated ? ' עדכון המאגר: ' + esc(st.updated) + '.' : ''}`;
+}
+async function benSearch() {
+  const q = $('#bnQ').value.trim(); if (!q) return; const row = benState.row;
+  benState = { row, busy: true, items: [] }; $('#bnMsg').textContent = 'מחפש במאגר מחירי האמת של בנארית…'; $('#bnOk').disabled = true; benRender();
+  const r = await benAsk(q);
+  if (!r.ok) { benState.busy = false; benRender();
+    $('#bnMsg').innerHTML = r.error === 'login' ? 'צריך להתחבר לאתר בנארית: לחצו "פתיחת החיפוש באתר בנארית", התחברו עם שם המשתמש והסיסמה, וחזרו לחיפוש.'
+      : r.error === 'timeout' ? 'בנארית לא ענה בזמן – נסו שוב.' : 'שגיאה בחיפוש בבנארית: ' + esc(r.error || ''); return; }
+  const lim = Date.now() - 183 * 864e5;
+  const items = (r.items || []).map(x => { const t = x.ts || 0; const old = t && t < lim; const sameUnit = !x.unit || B.unitCode(x.unit) === (+row.unit || 1);
+    return { ...x, price: B.num(x.price), qty: B.num(x.qty), old, on: !old && sameUnit && B.num(x.price) > 0 }; });
+  benState = { row, items, total: r.total, updated: r.updated, query: r.query, url: r.url }; benRender();
+}
+$('#aBenarit').onclick = () => { if (!needDoc()) return;
+  const r = S.doc.rows.find(x => x.id === S.sel); if (!r || r.kind !== 'I') return toast('סמנו סעיף בכתב');
+  benState = { row: r, items: [] }; $('#bnItem').textContent = (B.codeStr ? B.codeStr(S.doc, r) + ' – ' : '') + r.desc.slice(0, 70) + (r.desc.length > 70 ? '…' : '');
+  $('#bnQ').value = benQuery(r.desc); $('#bnTbl tbody').innerHTML = ''; $('#bnOk').disabled = true; $('#ovBen').classList.add('on');
+  if (!benExt()) { $('#bnMsg').innerHTML = 'כדי לבדוק מחיר אוטומטית צריך את <b>תוסף הכרום של טיקטין</b> במחשב הזה. בינתיים אפשר ללחוץ "פתיחת החיפוש באתר בנארית" ולבדוק שם.'; $('#bnTbl tbody').innerHTML = ''; return; }
+  benSearch(); };
+$('#bnGo').onclick = () => { if (!benExt()) return toast('תוסף הכרום של טיקטין לא מותקן במחשב הזה', 'bad'); benSearch(); };
+$('#bnQ').onkeydown = e => { if (e.key === 'Enter') $('#bnGo').click(); };
+$('#bnOpen').onclick = () => window.open(BEN_URL($('#bnQ').value.trim()), 'tiktin-benarit');
+$('#bnClose').onclick = () => $('#ovBen').classList.remove('on');
+$('#bnOk').onclick = () => { const st = benState; if (!st || !st.avg) return; const r = st.row; pushUndo();
+  const n = st.items.filter(x => x.on && x.price > 0).length;
+  r.price = st.avg; r.src = `בנארית ${today()} – ממוצע ${n} מכרזים`; $('#ovBen').classList.remove('on'); renderBoq(); touch();
+  toast(`המחיר עודכן ל-${fmt(st.avg)} ₪ (ממוצע ${n} מכרזים מבנארית)`, 'ok'); };
+
+/* ========== קווים בין הטורים ושינוי רוחב טורים (הרוחב נשמר במחשב) ==========
+   גוררים את הקו שבין שני טורים: טור אחד מתרחב והטור שלידו מצטמצם, כך שהטבלה תמיד ברוחב המסך */
 const colKey = t => 'tkq-cols-' + t.id;
 function colTargets(t) {
   const hd = t.tHead; if (!hd || hd.rows.length !== 1) return null; const ths = [...hd.rows[0].cells];
-  if (!ths.length || ths.some(c => c.colSpan > 1)) return null;
+  if (ths.length < 2 || ths.some(c => c.colSpan > 1)) return null;
   const cg = t.querySelector('colgroup'); const els = cg ? [...cg.children] : ths; if (els.length !== ths.length) return null;
   els.forEach(el => { if (el.dataset.w0 == null) el.dataset.w0 = el.style.width || ''; });
-  // הטור הגמיש (בד"כ תאור) – בלי רוחב קבוע, הוא מקבל את שאר הרוחב
   let flex = els.findIndex(el => !el.dataset.w0 && !(el.className && /c-/.test(el.className))); if (flex < 0) flex = els.length - 1;
   return { ths, els, flex };
 }
+const colMin = (T, j) => j === T.flex ? 160 : (T.ths[j].querySelector('input[type=checkbox]') || !T.ths[j].textContent.trim() ? 26 : 44);
+// הרוחב נשמר באחוזים מרוחב הטבלה – כך הטבלה מתאימה לכל מסך ולכל הגדלה, בלי גלילה הצידה
+const colPct = (w, tot) => (w / tot * 100).toFixed(3) + '%';
+function colSetAll(t, T, w) { const tot = w.reduce((a, b) => a + b, 0) || 1; t.style.tableLayout = 'fixed'; T.els.forEach((el, j) => el.style.width = colPct(w[j], tot)); }
 function colApply(t) {
   const T = colTargets(t); if (!T) return;
   let saved = null; try { saved = JSON.parse(localStorage.getItem(colKey(t)) || 'null'); } catch (e) { }
-  if (saved && saved.length === T.els.length) T.els.forEach((el, i) => { if (i !== T.flex && saved[i]) el.style.width = saved[i] + 'px'; });
+  if (saved && saved.length === T.els.length && saved.every(x => x > 0)) colSetAll(t, T, saved);
   T.ths.forEach((th, i) => {
-    if (i === T.flex || th.querySelector('.colrz')) return;
-    const h = document.createElement('span'); h.className = 'colrz'; h.title = 'גרירה לשינוי רוחב הטור · לחיצה כפולה מחזירה את כל הטורים לרוחב המקורי'; th.appendChild(h);
+    if (i === T.ths.length - 1 || th.querySelector('.colrz')) return; // לטור האחרון אין קו משותף עם טור נוסף
+    const h = document.createElement('span'); h.className = 'colrz'; h.title = 'גרירת הקו משנה את רוחב שני הטורים שלצידו · לחיצה כפולה מחזירה את כל הטורים לרוחב המקורי'; th.appendChild(h);
     h.addEventListener('click', ev => ev.stopPropagation());
     h.addEventListener('pointerdown', ev => {
       ev.preventDefault(); ev.stopPropagation(); const T2 = colTargets(t); if (!T2) return; const z = zoom || 1;
-      const w = T2.ths.map(x => x.getBoundingClientRect().width / z);
-      t.style.tableLayout = 'fixed'; T2.els.forEach((el, j) => { if (j !== T2.flex) el.style.width = Math.round(w[j]) + 'px'; });
-      const x0 = ev.clientX, w0 = w[i]; h.setPointerCapture(ev.pointerId); h.classList.add('on'); document.body.classList.add('colresizing');
-      const mv = e => { w[i] = Math.max(28, Math.round(w0 - (e.clientX - x0) / z)); T2.els[i].style.width = w[i] + 'px'; };
-      const up = () => { h.removeEventListener('pointermove', mv); h.removeEventListener('pointerup', up); h.classList.remove('on'); document.body.classList.remove('colresizing');
-        try { localStorage.setItem(colKey(t), JSON.stringify(w.map((x, j) => j === T2.flex ? 0 : Math.round(x)))); } catch (e) { } };
-      h.addEventListener('pointermove', mv); h.addEventListener('pointerup', up);
+      const w = T2.ths.map(x => x.getBoundingClientRect().width / z); colSetAll(t, T2, w); const tot = w.reduce((a, b) => a + b, 0);
+      const a = i, n = i + 1, x0 = ev.clientX, wa = w[a], wn = w[n], ma = colMin(T2, a), mn = colMin(T2, n);
+      h.setPointerCapture(ev.pointerId); h.classList.add('on'); document.body.classList.add('colresizing');
+      const mv = e => { let d = -(e.clientX - x0) / z; // בכיוון ימין-לשמאל: גרירה שמאלה מרחיבה את הטור
+        d = Math.max(ma - wa, Math.min(wn - mn, d)); w[a] = wa + d; w[n] = wn - d;
+        T2.els[a].style.width = colPct(w[a], tot); T2.els[n].style.width = colPct(w[n], tot); };
+      const up = () => { h.removeEventListener('pointermove', mv); h.removeEventListener('pointerup', up); h.removeEventListener('pointercancel', up); h.classList.remove('on'); document.body.classList.remove('colresizing');
+        try { localStorage.setItem(colKey(t), JSON.stringify(w.map(x => +(x / tot * 100).toFixed(3)))); } catch (e) { } };
+      h.addEventListener('pointermove', mv); h.addEventListener('pointerup', up); h.addEventListener('pointercancel', up);
     });
     h.addEventListener('dblclick', ev => { ev.stopPropagation(); try { localStorage.removeItem(colKey(t)); } catch (e) { }
       const T2 = colTargets(t); if (T2) T2.els.forEach(el => el.style.width = el.dataset.w0 || ''); t.style.tableLayout = ''; toast('רוחב הטורים הוחזר למקור'); });
   });
-  if (saved) t.style.tableLayout = 'fixed';
 }
 $$('table.list, table.boq').forEach(t => { colApply(t); if (t.tHead) new MutationObserver(() => colApply(t)).observe(t.tHead, { childList: true, subtree: true }); });
 
